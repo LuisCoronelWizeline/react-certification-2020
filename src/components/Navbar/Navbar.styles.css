@@ -1,0 +1,8 @@
+label {
+    color: white
+}
+
+label[type="text"] {
+    color: white  
+}
+
