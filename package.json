@@ -16,7 +16,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "testOld": "react-scripts test",
+    "testOld2": "jest --coverage --coverageReporters=text-summary",
+    "test": "jest --coverage --coverageReporters=text-summary --coverageDirectory=./ >coverage.txt",
     "eject": "react-scripts eject",
     "lint": "eslint ./src --ext .js,.jsx",
     "lint:fix": "eslint ./src --ext .js,.jsx --fix"
@@ -34,5 +36,17 @@
     "lint-staged": "^10.2.13",
     "prettier": "^2.1.1",
     "pretty-quick": "^3.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
