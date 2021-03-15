@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { Fragment } from 'react';
+import React from 'react';
 import './Navbar.styles.css';
 
 const Navbar = () => {
@@ -8,19 +8,19 @@ const Navbar = () => {
       <nav className="red">
         <div className="nav-wrapper">
           <div className="row">
-            <div className="col s4">
+            <div className="col s3">
               <a href="#!" className="brand-logo">
                 <i className="material-icons">menu</i>Wizeline
               </a>
             </div>
-            <div className="col s5">
+            <div className="col s6">
               <div className="row">
                 <form className="col s12">
                   <div className="row">
-                    <div className="input-field col s6">
+                    <div className="input-field">
                       <i className="material-icons prefix">search</i>
                       <input id="icon_prefix" type="text" className="validate" />
-                      <label htmlFor="icon_prefix">Video name</label>
+                      <label htmlFor="icon_prefix">Video ...</label>
                     </div>
                   </div>
                 </form>
@@ -38,7 +38,7 @@ const Navbar = () => {
             </div>
             <div className="col s1">
               <a href="x.html">
-                <i className="material-icons right-align">person</i>
+                <i className="material-icons center-align">account_circle</i>
               </a>
             </div>
           </div>
