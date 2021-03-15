@@ -6,7 +6,7 @@ const VideoCard = (props) => {
       <div className="card-image">
         <img alt="" src={props.video.snippet.thumbnails.high.url} />
         <a href="#1" className="btn-floating halfway-fab waves-effect waves-light red">
-          <i className="material-icons">add</i>
+          <i className="material-icons">play_arrow</i>
         </a>
       </div>
       <div className="card-content">
