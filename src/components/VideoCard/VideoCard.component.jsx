@@ -1,5 +1,12 @@
 import React from 'react';
 
+import styled from 'styled-components';
+
+const Card = styled.div`
+  background-color: #f7c7c7;
+  border-radius: 15px;
+`;
+
 const VideoCard = (props) => {
   return (
     <div data-testid="card-item" className="card">
@@ -10,7 +17,9 @@ const VideoCard = (props) => {
         </a>
       </div>
       <div className="card-content">
-        <span className="card-title">{props.video.snippet.title}</span>
+        <Card>
+          <span className="card-title">{props.video.snippet.title}</span>
+        </Card>
         <p>{props.video.snippet.description}</p>
       </div>
     </div>
