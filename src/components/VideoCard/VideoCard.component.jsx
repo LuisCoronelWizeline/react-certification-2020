@@ -2,7 +2,7 @@ import React from 'react';
 
 const VideoCard = (props) => {
   return (
-    <div className="card">
+    <div data-testid="card-item" className="card">
       <div className="card-image">
         <img alt="" src={props.video.snippet.thumbnails.high.url} />
         <a href="#1" className="btn-floating halfway-fab waves-effect waves-light red">
