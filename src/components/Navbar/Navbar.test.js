@@ -18,4 +18,3 @@ it('test the dark option is rendering in the navbar', () => {
   const darkOption = screen.getByText(/Dark/i);
   expect(darkOption).toBeInTheDocument();
 });
-
