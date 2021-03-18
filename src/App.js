@@ -5,9 +5,9 @@ import M from 'materialize-css/dist/js/materialize.min';
 
 import styled from 'styled-components';
 
-import Navbar from '../Navbar/Navbar.component';
-import Footer from '../Footer/Footer.component';
-import Videos from '../Videos/Videos.component';
+import Navbar from './components/Navbar/Navbar.component.jsx';
+import Footer from './components/Footer/Footer.component.jsx';
+import Videos from './components/Videos/Videos.component.jsx';
 
 const MenuBar = styled.div`
   color: white;

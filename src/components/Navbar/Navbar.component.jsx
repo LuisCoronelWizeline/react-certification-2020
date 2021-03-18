@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import './Navbar.styles.css';
 
@@ -10,7 +9,7 @@ const Navbar = () => {
           <div className="row">
             <div className="col s3">
               <a href="#!" className="brand-logo">
-                <i className="material-icons">menu</i>Wizeline
+                <i className="material-icons">menu</i>Wizeline!
               </a>
             </div>
             <div className="col s6">
@@ -20,7 +19,7 @@ const Navbar = () => {
                     <div className="input-field">
                       <i className="material-icons prefix">search</i>
                       <input id="icon_prefix" type="text" className="validate" />
-                      <label htmlFor="icon_prefix">Video ...</label>
+                      <label htmlFor="icon_prefix">Search video ...</label>
                     </div>
                   </div>
                 </form>
