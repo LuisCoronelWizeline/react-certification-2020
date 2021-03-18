@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+it('test the app is rendering', () => {
   render(<App />);
-  const linkElement = screen.getByText(/Search video .../i);
-  expect(linkElement).toBeInTheDocument();
+  const accountIcon = screen.getByTestId("account-icon");
+  expect(accountIcon).toBeInTheDocument();
 });

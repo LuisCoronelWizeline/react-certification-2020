@@ -1,21 +1,21 @@
 import { render, screen } from '@testing-library/react';
 import Navbar from './Navbar.component';
 
-it('renders the search video option in the navbar', () => {
+it('test the search video option is available in the navbar', () => {
   render(<Navbar />);
-  const linkElement = screen.getByText(/Search video .../i);
-  expect(linkElement).toBeInTheDocument();
+  const searchVideoOption = screen.getByText(/Search video .../i);
+  expect(searchVideoOption).toBeInTheDocument();
 });
 
-it('renders the light option in the navbar', () => {
-    render(<Navbar />);
-    const linkElement = screen.getByText(/Light/i);
-    expect(linkElement).toBeInTheDocument();
-  });
-
-it('renders the dark option in the navbar', () => {
-render(<Navbar />);
-const linkElement = screen.getByText(/Dark/i);
-expect(linkElement).toBeInTheDocument();
+it('test the light option is rendering in the navbar', () => {
+  render(<Navbar />);
+  const lightOption = screen.getByText(/Light/i);
+  expect(lightOption).toBeInTheDocument();
 });
-  
+
+it('test the dark option is rendering in the navbar', () => {
+  render(<Navbar />);
+  const darkOption = screen.getByText(/Dark/i);
+  expect(darkOption).toBeInTheDocument();
+});
+

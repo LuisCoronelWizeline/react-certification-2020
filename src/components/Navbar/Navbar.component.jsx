@@ -37,7 +37,7 @@ const Navbar = () => {
             </div>
             <div className="col s1">
               <a href="x.html">
-                <i className="material-icons center-align">account_circle</i>
+                <i data-testid="account-icon" className="material-icons center-align">account_circle</i>
               </a>
             </div>
           </div>
