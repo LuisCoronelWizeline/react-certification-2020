@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Card = styled.div`
-  background-color: #f7c7c7;
+  background-color: #ffe4e4;
   border-radius: 15px;
 `;
 
