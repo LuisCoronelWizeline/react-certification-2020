@@ -6,7 +6,8 @@ const Videos = () => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col s12">
+        <div className="col s3"></div>
+        <div className="col s6">
           {videos.items.map((video) => (
             <VideoCard key={video.etag} video={video} />
           ))}

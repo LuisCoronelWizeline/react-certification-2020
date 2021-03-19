@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const Card = styled.div`
   background-color: #ffe4e4;
-  border-radius: 15px;
+  border-radius: 10px;
 `;
 
 const VideoCard = (props) => {
