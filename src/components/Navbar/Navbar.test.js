@@ -8,7 +8,7 @@ describe('Navbar component tests', () => {
   });
 
   it('test the search video option is available in the navbar', () => {
-    const searchVideoOption = screen.getByText(/Search video .../i);
+    const searchVideoOption = screen.getByTestId("search-icon");
     expect(searchVideoOption).toBeInTheDocument();
   });
   
