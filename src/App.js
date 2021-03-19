@@ -3,9 +3,7 @@ import React, { useEffect } from 'react';
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min';
 
-import Navbar from './components/Navbar/Navbar.component.jsx';
-import Footer from './components/Footer/Footer.component.jsx';
-import Videos from './components/Videos/Videos.component.jsx';
+import HomeView from './components/HomeView/HomeView.component.jsx'
 
 function App() {
   useEffect(() => {
@@ -14,11 +12,7 @@ function App() {
   });
 
   return (
-    <>
-      <Navbar />
-      <Videos />
-      <Footer />
-    </>
+    <HomeView />
   );
 }
 
