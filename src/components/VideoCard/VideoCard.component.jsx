@@ -9,8 +9,8 @@ const Card = styled.div`
 
 const VideoCard = (props) => {
   return (
-    <div data-testid="card-item" className="card">
-      <div className="card-image">
+    <div data-testid="card-item" className="card large hoverable">
+      <div className="card-image" style={cardImage}>
         <img alt="" src={props.video.snippet.thumbnails.high.url} />
         <a href="#1" className="btn-floating halfway-fab waves-effect waves-light red">
           <i className="material-icons">play_arrow</i>
@@ -25,5 +25,9 @@ const VideoCard = (props) => {
     </div>
   );
 };
+
+const cardImage = {
+  overflow: "visible" // This solve the problem with the play button half hidden
+}
 
 export default VideoCard;

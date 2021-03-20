@@ -4,15 +4,14 @@ import VideoCard from '../VideoCard/VideoCard.component';
 
 const Videos = () => {
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col s3"></div>
-        <div className="col s6">
-          {videos.items.map((video) => (
+    <div className="row">
+      {videos.items.map((video) => (
+        <div className="container">
+          <div className="col s12 m4">
             <VideoCard key={video.etag} video={video} />
-          ))}
+          </div>
         </div>
-      </div>
+      ))}
     </div>
   );
 };
