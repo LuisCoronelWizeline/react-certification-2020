@@ -1,5 +1,6 @@
-import React from 'react';
-
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import VideosContext from '../../context/videos/videosContext';
 import styled from 'styled-components';
 
 const Card = styled.div`
@@ -8,18 +9,29 @@ const Card = styled.div`
 `;
 
 const VideoCard = (props) => {
+
+  const videosContext = useContext(VideosContext);
+
+  const onClickPlay = e => {
+    console.log('le diste play al video con id: ' + props.video.id.videoId);
+    videosContext.setVideo(props.video);
+  };
+
   return (
     <div data-testid="card-item" className="card large hoverable">
       <div className="card-image" style={cardImage}>
         <img alt="" src={props.video.snippet.thumbnails.high.url} />
-        <a href="#1" className="btn-floating halfway-fab waves-effect waves-light red">
-          <i className="material-icons">play_arrow</i>
-        </a>
+        <Link to='/videoDetail'>
+          <a href="#1" className="btn-floating halfway-fab waves-effect waves-light red">
+            <i className="material-icons" onClick={onClickPlay}>play_arrow</i>
+          </a>
+        </Link>
       </div>
       <div className="card-content">
         <Card>
           <span className="card-title">{props.video.snippet.title}</span>
         </Card>
+        <p>ID:{props.video.id.videoId}</p>
         <p>{props.video.snippet.description}</p>
       </div>
     </div>

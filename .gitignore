@@ -8,12 +8,17 @@
 # testing
 /coverage
 coverage.txt
+clover.xml
+coverage-final.json
+lcov.info
+/lcov-report
 
 # production
 /build
 
 # misc
 .DS_Store
+.env
 .env.local
 .env.development.local
 .env.test.local

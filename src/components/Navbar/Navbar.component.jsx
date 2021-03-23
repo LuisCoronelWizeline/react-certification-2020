@@ -2,6 +2,19 @@ import React from 'react';
 import './Navbar.styles.css';
 
 const Navbar = () => {
+
+  const onClickMenu = e => {
+    console.log('click on menu icon');
+  };
+
+  const onClickAccount = e => {
+    console.log('click on account icon');
+  };
+
+  const onClickMode = e => {
+    console.log('click on mode switch icon');
+  };
+
   return (
     <>
       <div className="navbar-fixed">
@@ -10,38 +23,23 @@ const Navbar = () => {
             <div className="row">
               <div className="col s6">
                 <a href="#!" className="brand-logo">
-                  <i className="material-icons">menu</i>Wizeline!
+                  <i className="material-icons" onClick={onClickMenu}>menu</i>Wizeline!
                 </a>
               </div>
               <div className="col s5">
                 <div className="switch right-align">
                   <label>
                     Light
-                    <input type="checkbox" />
+                    <input type="checkbox" onClick={onClickMode} />
                     <span className="lever" />
                     Dark
                   </label>
                 </div>
               </div>
               <div className="col s1">
-                <a href="x.html">
-                  <i data-testid="account-icon" className="material-icons center-align">account_circle</i>
-                </a>
+                <i data-testid="account-icon" className="material-icons center-align" onClick={onClickAccount}>account_circle</i>
               </div>
             </div>
-          </div>
-        </nav>
-      </div>
-      <div className="navbar-fixed">
-        <nav>
-          <div className="nav-wrapper red lighten-2">
-            <form>
-              <div className="input-field">
-                <input id="search" type="search" required />
-                <label className="label-icon" htmlFor="search"><i className="material-icons">search</i></label>
-                <i data-testid="search-icon" className="material-icons">close</i>
-              </div>
-            </form>
           </div>
         </nav>
       </div>
