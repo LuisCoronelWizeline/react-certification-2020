@@ -4,6 +4,7 @@ import VideosContext from './videosContext';
 import VideosReducer from './videosReducer';
 import {
     GET_VIDEOS,
+    GET_RELATED_VIDEOS,
     SET_VIDEO,
 } from '../types';
 
@@ -12,7 +13,8 @@ import videosYoutube from '../../data/viedosYoutube.json';
 const VideosState = props => {
     const initialState = {
         videos: [],
-        video: {},
+        relatedVideos: [],
+        video: {}
     }
 
     const [state, dispatch] = useReducer(VideosReducer, initialState);
@@ -36,6 +38,19 @@ const VideosState = props => {
     //         payload: videosYoutube.items
     //     });
     // };
+
+    const getRelatedVideos = async (videoId) => {
+        console.log('related video id: ' + videoId);
+        console.log(process.env.API_KEY)
+        const res = await axios.get(
+            `https://www.googleapis.com/youtube/v3/search?key=AIzaSyC7G_5ZgK70ajrU78JQiiaEMTB1-8I_tto&relatedToVideoId=${videoId}&type=video`
+        );
+
+        dispatch({
+            type: GET_RELATED_VIDEOS,
+            payload: res.data.items
+        });
+    };
     
     const searchVideos = async (searchWord) => {
         console.log(searchWord);
@@ -61,8 +76,10 @@ const VideosState = props => {
     return <VideosContext.Provider 
         value = {{
             videos: state.videos,
+            relatedVideos: state.relatedVideos,
             video: state.video,
             getVideos,
+            getRelatedVideos,
             setVideo,
             searchVideos
         }}

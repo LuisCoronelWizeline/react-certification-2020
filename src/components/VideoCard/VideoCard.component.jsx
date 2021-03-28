@@ -8,7 +8,7 @@ const Card = styled.div`
   border-radius: 10px;
 `;
 
-const VideoCard = (props) => {
+const VideoCard = (props, key) => {
 
   const videosContext = useContext(VideosContext);
 
@@ -22,9 +22,9 @@ const VideoCard = (props) => {
       <div className="card-image" style={cardImage}>
         <img alt="" src={props.video.snippet.thumbnails.high.url} />
         <Link to='/videoDetail'>
-          <a href="#1" className="btn-floating halfway-fab waves-effect waves-light red">
+          <i href="#1" className="btn-floating halfway-fab waves-effect waves-light red">
             <i className="material-icons" onClick={onClickPlay}>play_arrow</i>
-          </a>
+          </i>
         </Link>
       </div>
       <div className="card-content">
