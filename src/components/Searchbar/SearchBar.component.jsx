@@ -1,18 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import VideosContext from '../../context/videos/videosContext';
 
 const SearchBar  = () => {
 
-    const [text, setText] = useState('');
+
+    const videosContext = useContext(VideosContext);
+
+    const [text, setText] = useState(''); // Local state to handle the text inside the search input
 
     const onChangeSearch = e => {
         setText(e.target.value);
-        console.log('ahorita el texto es ' + text);
+        console.log('rigth now the placeholder should say: ' + text);
     }
 
     const onSubmitSearch = e => {
         e.preventDefault();
-        console.log('se envio para buscar ' + text);
+        console.log('the search text sent was: ' + text);
         setText('');
+        videosContext.searchVideos(text);
     }
 
     return (

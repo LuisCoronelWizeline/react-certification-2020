@@ -1,19 +1,23 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const VideoCardDetails = (props) => {
     return (
-        <div class="card">
-            <div class="card-image">
-                <img alt='' src={props.video.snippet.thumbnails.high.url}/>
-                <span class="card-title">Card Title</span>
+        <div className="card">
+            <div className="card-image">
+                <div class="video-container">
+                    <iframe title="video" src={`//www.youtube.com/embed/${props.video.id.videoId}?rel=0`} allowfullscreen></iframe>
+                </div>
+                <span className="card-title">{props.video.snippet.title}</span>
             </div>
-            <div class="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p>
+            <div className="card-content">
+                <p>{props.video.snippet.description}</p>
             </div>
-            <div class="card-action">
-                <a href="#">This is a link</a>
-            </div>
+            <Link to='/'>
+                <div className="card-action">
+                    <a href="#1">Go back </a>
+                </div>
+            </Link>
         </div>
     )
 }
