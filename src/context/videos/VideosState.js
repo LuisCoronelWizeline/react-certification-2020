@@ -22,7 +22,7 @@ const VideosState = props => {
     const getVideos = async () => {
         console.log(process.env.API_KEY)
         const res = await axios.get(
-            `https://www.googleapis.com/youtube/v3/search?key=AIzaSyC7G_5ZgK70ajrU78JQiiaEMTB1-8I_tto&part=snippet&maxResults=30&q=wizeline`
+            `https://www.googleapis.com/youtube/v3/search?key=${process.env.API_KEY}&part=snippet&maxResults=30&q=wizeline`
         );
 
         dispatch({
@@ -43,7 +43,7 @@ const VideosState = props => {
         console.log('related video id: ' + videoId);
         console.log(process.env.API_KEY)
         const res = await axios.get(
-            `https://www.googleapis.com/youtube/v3/search?key=AIzaSyC7G_5ZgK70ajrU78JQiiaEMTB1-8I_tto&relatedToVideoId=${videoId}&type=video`
+            `https://www.googleapis.com/youtube/v3/search?key=${process.env.API_KEY}&relatedToVideoId=${videoId}&type=video`
         );
 
         dispatch({
@@ -56,7 +56,7 @@ const VideosState = props => {
         console.log(searchWord);
         console.log(process.env.API_KEY)
         const res = await axios.get(
-            `https://www.googleapis.com/youtube/v3/search?key=AIzaSyC7G_5ZgK70ajrU78JQiiaEMTB1-8I_tto&part=snippet&maxResults=30&q=${searchWord}`
+            `https://www.googleapis.com/youtube/v3/search?key=${process.env.API_KEY}&part=snippet&maxResults=30&q=${searchWord}`
         );
 
         dispatch({

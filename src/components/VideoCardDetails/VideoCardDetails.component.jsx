@@ -7,7 +7,7 @@ const VideoCardDetails = (props) => {
     return (
         <div className="card">
             <div className="card-image">
-                <div class="video-container">
+                <div data-testid="video-container" class="video-container">
                     <iframe title="video" src={`//www.youtube.com/embed/${props.video.id.videoId}?rel=0`} allowfullscreen></iframe>
                 </div>
                 <span className="card-title">{props.video.snippet.title}</span>
