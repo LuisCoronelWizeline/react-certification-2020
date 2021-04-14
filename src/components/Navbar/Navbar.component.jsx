@@ -1,50 +1,73 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import './Navbar.styles.css';
+import UserContext from '../../context/user/userContext.js';
+import DropdownMenu from '../DropdownMenu/DropdownMenu.component.jsx';
+import M from 'materialize-css/dist/js/materialize.min';
 
 const Navbar = () => {
 
-  const onClickMenu = e => {
-    console.log('click on menu icon');
-  };
+const userContext = useContext(UserContext);
 
-  const onClickAccount = e => {
-    console.log('click on account icon');
-  };
-
-  const onClickMode = e => {
-    console.log('click on mode switch icon');
-  };
-
-  return (
-    <>
-      <div className="navbar-fixed">
-        <nav className="red">
-          <div className="nav-wrapper">
-            <div className="row">
-              <div className="col s6">
-                <a href="#!" className="brand-logo">
-                  <i className="material-icons" onClick={onClickMenu}>menu</i>Wizeline!
-                </a>
-              </div>
-              <div className="col s5">
-                <div className="switch right-align">
-                  <label>
-                    Light
-                    <input type="checkbox" onClick={onClickMode} />
-                    <span className="lever" />
-                    Dark
-                  </label>
+useEffect(() => {
+    // Init materialize sidenav element
+    let sidenav = document.querySelector('#slide-out');
+    M.Sidenav.init(sidenav, {});  
+    //Init drop down menu
+    var elems = document.querySelectorAll('.dropdown-trigger');
+    M.Dropdown.init(elems, {});
+}, []);
+  
+const onChangeTheme = e => {
+    console.log('le diste click al theme');
+    console.log(userContext.themeDark);
+    userContext.setTheme(!userContext.themeDark);
+};
+    
+    return (
+        <>
+            <div className="navbar-fixed">
+            <nav className="red accent-4 navbar-fixed">
+                <div className="row">
+                    <div className='col s9'>
+                        <a href="#1">
+                            <i data-testid="menu-icon" className="material-icons sidenav-trigger" data-target="slide-out">menu</i>
+                        </a>
+                    </div>
+                    <div className='col s2'>
+                        <div className="switch">
+                            <label>
+                                Light
+                                <input data-testid="theme-switch" type="checkbox" checked={userContext.themeDark ? "checked" : ""} onChange={onChangeTheme}/>
+                                <span className="lever" />
+                                Dark
+                            </label>
+                        </div>
+                    </div>
+                    <div className='col s1 center-align'>
+                        <DropdownMenu />
+                    </div>
                 </div>
-              </div>
-              <div className="col s1">
-                <i data-testid="account-icon" className="material-icons center-align" onClick={onClickAccount}>account_circle</i>
-              </div>
+            </nav>
             </div>
-          </div>
-        </nav>
-      </div>
-    </>
-  );
+            <ul id="slide-out" className="sidenav">
+                <li>
+                    <div className="user-view">
+                    <div className="background">
+                        <img alt="" src="images/office.jpg" />
+                    </div>
+                    <a href="#user"><img alt="" className="circle" src="images/yuna.jpg" /></a>
+                    <a href="#name"><span className="white-text name">John Doe</span></a>
+                    <a href="#email"><span className="white-text email">jdandturk@gmail.com</span></a>
+                    </div>
+                </li>
+                <li><a href="#!"><i className="material-icons">cloud</i>First Link With Icon</a></li>
+                <li><a href="#!">Second Link</a></li>
+                <li><div className="divider"></div></li>
+                <li><a className="subheader" href="#!">Subheader</a></li>
+                <li><a className="waves-effect" href="#!">Third Link With Waves</a></li>
+            </ul>
+        </>
+    );
 };
 
 export default Navbar;

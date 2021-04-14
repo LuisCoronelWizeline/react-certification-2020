@@ -8,7 +8,7 @@ const Card = styled.div`
   border-radius: 10px;
 `;
 
-const VideoCard = (props, key) => {
+const VideoCard = (props) => {
 
   const videosContext = useContext(VideosContext);
 

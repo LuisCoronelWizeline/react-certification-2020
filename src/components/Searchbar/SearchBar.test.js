@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import SearchBar from './SearchBar.component.jsx';
+import userEvent from '@testing-library/user-event'
 
 describe('Navbar component tests', () => {
 
@@ -18,9 +19,9 @@ describe('Navbar component tests', () => {
   });
 
   it('test the close icon is pressent when click on the search video field', () => {
-    const closeIcon = screen.getByTestId("close-icon");
-    closeIcon.click();
-    expect(closeIcon).toBeInTheDocument();
+    const magnifyingGlassIcon = screen.getByTestId("magnifying-glass-icon");
+    userEvent.click(magnifyingGlassIcon);
+    expect(screen.getByTestId("close-icon")).toBeInTheDocument();
   });
   
 });

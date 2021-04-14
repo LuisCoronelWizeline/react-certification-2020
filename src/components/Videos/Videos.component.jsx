@@ -1,9 +1,11 @@
 import React, { useEffect, useContext } from 'react';
+import UserContext from '../../context/user/userContext';
 import VideosContext from '../../context/videos/videosContext';
 import VideoCard from '../VideoCard/VideoCard.component';
 
 const Videos = () => {
 
+  const userContext = useContext(UserContext);
   const videosContext = useContext(VideosContext);
 
   useEffect(() => {
@@ -12,11 +14,11 @@ const Videos = () => {
   }, []);
 
   return (
-    <div className="row">
-      {videosContext.videos.map((video) => (
-        <div className="container">
+    <div data-testid="home-background" className="row" style={userContext.themeDark ? {backgroundColor: "black"} : {backgroundColor: "withe"}}>
+      {videosContext.videos.map((video, index) => (
+        <div key={index} className="container">
           <div className="col s12 m4">
-            <VideoCard video={video} key={video.id.videoId} />
+            <VideoCard video={video} />
           </div>
         </div>
       ))}

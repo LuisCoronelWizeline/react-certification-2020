@@ -1,11 +1,13 @@
-import React, { Fragment, useContext, useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import VideosContext from '../../../context/videos/videosContext';
+import UserContext from '../../../context/user/userContext';
 import VideoCardDetails from '../../../components/VideoCardDetails/VideoCardDetails.component.jsx'
 
 const VideoDetailsView = () => {
 
     const videosContext = useContext(VideosContext);
-    
+    const userContext = useContext(UserContext);
+
     useEffect(() => {
         videosContext.getRelatedVideos(videosContext.video.id.videoId);
         console.log('This is the id to search related videos: ' + videosContext.video.id.videoId);
@@ -13,23 +15,23 @@ const VideoDetailsView = () => {
     }, []);
     
     return (
-        <Fragment>
+        <div style={userContext.themeDark ? {backgroundColor: "black"} : {backgroundColor: "withe"}}>
             <div className='container'>
                 <VideoCardDetails video={videosContext.video} />
             </div>
-            <blockquote>
-              Related videos.
-            </blockquote>
+            <h1 style={{color: "red"}}>
+              Related videos...
+            </h1>
             <div className="row">
-                {videosContext.relatedVideos.map((relatedVideo) => (
-                    <div className="container">
+                {videosContext.relatedVideos.map((relatedVideo, index) => (
+                    <div key={index} className="container">
                         <div className="col s12 m4">
-                            <iframe title="video" src={`//www.youtube.com/embed/${relatedVideo.id.videoId}?rel=0`} allowfullscreen></iframe>
+                            <iframe title="video" src={`//www.youtube.com/embed/${relatedVideo.id.videoId}?rel=0`} allowFullScreen></iframe>
                         </div>
                     </div>
                 ))}
             </div>
-        </Fragment>
+        </div>
     )
 }
 

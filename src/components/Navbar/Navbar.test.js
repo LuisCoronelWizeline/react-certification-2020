@@ -7,9 +7,9 @@ describe('Navbar component tests', () => {
     render(<Navbar />);
   });
 
-  it('test the search video option is available in the navbar', () => {
-    const searchVideoOption = screen.getByTestId("search-icon");
-    expect(searchVideoOption).toBeInTheDocument();
+  it('test the menu option is available in the navbar', () => {
+    const menuOption = screen.getByTestId("menu-icon");
+    expect(menuOption).toBeInTheDocument();
   });
   
   it('test the light option is rendering in the navbar', () => {
@@ -21,4 +21,10 @@ describe('Navbar component tests', () => {
     const darkOption = screen.getByText(/Dark/i);
     expect(darkOption).toBeInTheDocument();
   });
+
+  it('test the account option is available in the navbar', () => {
+    const accountOption = screen.getByTestId("account-icon");
+    expect(accountOption).toBeInTheDocument();
+  });
+
 });

@@ -2,14 +2,18 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="page-footer red">
-      <div className="center-align" style={footerText}>© Luis Coronel</div>
+    <footer className="page-footer" style={footerColor}>
+      <div className="footer-copyright">
+        <div className='container center'>
+          © Luis Coronel - React bootcamp challenge 2021
+        </div>
+      </div>
     </footer>
   );
 };
 
-const footerText = {
-  backgroundColor: "#ff0000",
+const footerColor = {
+  backgroundColor: "red",
 }
 
 export default Footer;
