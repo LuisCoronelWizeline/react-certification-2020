@@ -8,7 +8,7 @@ import {
     SET_VIDEO,
 } from '../types';
 
-import videosYoutube from '../../data/viedosYoutube.json';
+//import videosYoutube from '../../data/viedosYoutube.json';
 
 const VideosState = props => {
     const initialState = {
