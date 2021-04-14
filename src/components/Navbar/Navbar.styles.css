@@ -1,0 +1,22 @@
+label {
+    color: white;
+}
+
+label[type="text"] {
+    color: white;  
+}
+
+/* label color */
+.input-field label {
+    color: white;  
+}
+
+/* label focus color */
+.input-field input[type=text]:focus + label {
+    color: white;  
+}
+
+/* icon prefix focus color */
+.input-field .prefix.active {
+    color: white;  
+}
