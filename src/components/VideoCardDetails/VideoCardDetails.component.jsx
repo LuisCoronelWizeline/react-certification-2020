@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
+import UserContext from '../../context/user/userContext';
 
 const VideoCardDetails = (props) => {
 
+    const userContext = useContext(UserContext);
+
+    const onClickAddFavorites = () => {
+        userContext.addFavoriteVideos(props.video);
+    }
 
     return (
         <div className="card">
@@ -17,7 +23,7 @@ const VideoCardDetails = (props) => {
             </div>
             <Link to='/'>
                 <div className="card-action">
-                    <a href="#1">Go back </a>
+                    <a href="#1" onClick={onClickAddFavorites} >+ Add to favorites</a>
                 </div>
             </Link>
         </div>

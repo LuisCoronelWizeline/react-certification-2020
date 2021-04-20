@@ -1,6 +1,8 @@
 /* eslint-disable import/no-anonymous-default-export */
 import {
-    SET_THEME
+    SET_THEME,
+    USER_LOGIN,
+    FAVORITE_VIDEOS
 } from '../types.js';
 
 export default (state, action) => {
@@ -10,6 +12,16 @@ export default (state, action) => {
                 ...state,
                 themeDark: action.payload
             }
+        case USER_LOGIN:
+            return {
+                ...state,
+                userLogged: action.payload
+            }
+        case FAVORITE_VIDEOS:
+            return {
+                ...state,
+                favoriteVideos: action.payload
+            }    
         default:
             return state;
     }

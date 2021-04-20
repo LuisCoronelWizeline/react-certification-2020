@@ -5,3 +5,5 @@ export const GET_RELATED_VIDEOS = 'GET_RELATED_VIDEOS';
 
 // user state
 export const SET_THEME = 'SET_THEME';
+export const USER_LOGIN = 'USER_LOGIN';
+export const FAVORITE_VIDEOS = 'FAVORITE_VIDEOS';
